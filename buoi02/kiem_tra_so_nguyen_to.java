@@ -21,7 +21,7 @@ public class kiem_tra_so_nguyen_to {
                 i++;
             }
             if (check) {
-                System.out.println(number + "is a  prime");
+                System.out.println(number + " is a  prime");
             }
                 else {
                     System.out.println(number + " is not  a  prime");
