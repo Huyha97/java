@@ -1,29 +1,35 @@
 package viDu;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class duongCheo {
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-        System.out.println(" nap chieu dai rong cua ma tran: ");
-        int num = scanner.nextInt();
-
-        double[][] arr = new double[num][num];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.printf(" nhap vao phan tu thu [%d][%d]:",i,j );
-                arr[i][j] = scanner.nextDouble();
-            }
+   int size;
+   int []array;
+   Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println(" enter the size: ");
+            size = scanner.nextInt();
+            if (size > 20)
+                System.out.println(" size dose not exceed 20");
+        }  while (size>20);
+    array = new int[size];
+    int i =0;
+    while ( i < array.length) {
+        System.out.println(" nhap vao phan tu thu " + (i + 1) + ": ");
+        array[i] = scanner.nextInt();
+        i++;
+    }
+        System.out.println(" mang khoi tao la: ");
+        System.out.println(Arrays.toString(array));
+        for (int j = 0; j < array.length/2; j++) {
+            int temp = array[j];
+            array[j] = array[size -1-j];
+            array[size -1-j] = temp;
         }
-        double sum =0;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (i == j) {
-                    sum += arr[i][j];
-                }
-            }
-        }
-        System.out.println("tong:" + sum);
+        System.out.println(" mang sau khi dao la: ");
+        System.out.println(Arrays.toString(array));
     }
     }
 
